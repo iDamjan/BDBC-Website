@@ -29,7 +29,7 @@ function Skull(props) {
   });
   useEffect(() => {}, []);
   return (
-    <group {...props} dispose={null}>
+    <group {...props} dispose={null} position={[0, -1, 0]}>
       <mesh
         castShadow
         receiveShadow
