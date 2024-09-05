@@ -6,6 +6,7 @@ const Experience = () => {
   return (
     <>
       <Yard />
+      <h1>test</h1>
       <Resize height scale={2.7}>
         <Skull />
 
