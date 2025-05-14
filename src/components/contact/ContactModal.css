@@ -1,0 +1,229 @@
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  backdrop-filter: blur(5px);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 1000;
+  padding: 1rem;
+  animation: fadeIn 0.3s ease-in-out;
+}
+
+.modal-content {
+  background-color: #191919;
+  border-radius: 2px;
+  width: 100%;
+  max-width: 550px;
+  position: relative;
+  padding: 2.5rem;
+  box-shadow: 0 15px 30px rgba(0, 0, 0, 0.3);
+  animation: slideUp 0.4s ease-out;
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+.modal-close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  background: none;
+  border: none;
+  color: rgba(255, 255, 255, 0.7);
+  font-size: 1.5rem;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  width: 2rem;
+  height: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+}
+
+.modal-close:hover {
+  color: #f9b716;
+}
+
+.modal-header {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.modal-header h2 {
+  font-size: 2rem;
+  font-weight: 300;
+  text-transform: lowercase;
+  letter-spacing: -0.5px;
+  margin-bottom: 0.8rem;
+  color: white;
+}
+
+.modal-header h2 span {
+  color: #f9b716;
+  font-weight: 500;
+}
+
+.accent-line {
+  height: 1px;
+  width: 50px;
+  background-color: #f9b716;
+  margin: 0 auto;
+}
+
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.form-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.form-group label {
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.7);
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+}
+
+.form-group input,
+.form-group select,
+.form-group textarea {
+  background-color: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  border-radius: 2px;
+  padding: 0.8rem 1rem;
+  color: white;
+  font-size: 0.9rem;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  transition: border-color 0.3s ease;
+  resize: none;
+}
+
+.form-group input:focus,
+.form-group select:focus,
+.form-group textarea:focus {
+  border-color: #f9b716;
+  outline: none;
+}
+
+.form-group input::placeholder,
+.form-group textarea::placeholder {
+  color: rgba(255, 255, 255, 0.3);
+}
+
+.submit-btn {
+  background-color: #f9b716;
+  border: 1px solid #f9b716;
+  color: #191919;
+  padding: 0.8rem 1.5rem;
+  border-radius: 2px;
+  font-size: 0.9rem;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  text-transform: lowercase;
+  letter-spacing: 0.5px;
+  font-weight: 400;
+  font-family: "Inter", "Helvetica Neue", sans-serif;
+  margin-top: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 3rem;
+}
+
+.submit-btn:hover {
+  background-color: transparent;
+  color: #f9b716;
+}
+
+.submit-btn:disabled {
+  opacity: 0.7;
+  cursor: not-allowed;
+}
+
+.loading-spinner {
+  width: 1.2rem;
+  height: 1.2rem;
+  border: 2px solid rgba(25, 25, 25, 0.3);
+  border-top-color: #191919;
+  border-radius: 50%;
+  animation: spin 0.8s linear infinite;
+}
+
+.success-message,
+.error-message {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 2rem 1rem;
+  gap: 1.5rem;
+  animation: fadeIn 0.5s ease;
+}
+
+.success-message svg,
+.error-message svg {
+  width: 4rem;
+  height: 4rem;
+}
+
+.success-message svg {
+  color: #f9b716;
+}
+
+.error-message svg {
+  color: #e74c3c;
+}
+
+.success-message p,
+.error-message p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  font-weight: 300;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes slideUp {
+  from {
+    transform: translateY(30px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+@keyframes spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+@media (max-width: 576px) {
+  .modal-content {
+    padding: 2rem 1.5rem;
+  }
+
+  .modal-header h2 {
+    font-size: 1.7rem;
+  }
+}
