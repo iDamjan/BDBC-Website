@@ -7,6 +7,12 @@
   width: 700px;
 }
 
+@media (max-width: 600px) {
+  .container-logo img {
+    width: 320px;
+  }
+}
+
 @keyframes logoAni {
   from {
     transform: rotate(0deg);
